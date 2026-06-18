@@ -45,13 +45,13 @@ POST `/books` + {token:str, title:str, body:str, category:int} ->
     }
 }
 ```
-GET `/books` + {token:str} ->  
+POST `/books` + {token:str} ->  
 ```
 {
     [
         { 
             book_id:int, 
-            writer:str, 
+            author:str, 
             title:str, 
             category:int 
         },
@@ -60,12 +60,12 @@ GET `/books` + {token:str} ->
     ]
 }
 ```
-GET `/books/{book_id}` + {token:str} ->  
+POST `/books/{book_id}` + {token:str} ->  
 ```
 {
     {
         book_id:int,
-        writer:str,
+        author:str,
         title:str,
         category:int,
         body:str
@@ -93,17 +93,6 @@ POST `/auth` + {user:str, password:str} ->
 {
     {
         token:str
-    }
-}
-```
-GET `/profile` + {token:str} ->  
-```
-{
-    {
-        writer:str,
-        books: [
-            book_id:int
-        ]
     }
 }
 ```

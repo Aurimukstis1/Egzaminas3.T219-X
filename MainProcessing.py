@@ -12,9 +12,31 @@ class Auth(BaseModel):
     LastName: str
     Password: str
 
+class Book(BaseModel):
+    Token: str
+    Title: str
+    Body: str
+    Category: int
+
 @app.get("/")
 async def index():
     return {}
+
+@app.post("/books", status_code=201)
+async def create_book(body: Book):
+    return { { "book_id":"" } }
+
+@app.post("/books", status_code=200)
+async def get_books(token: str):
+    return { [ { "book_id":"", "author":"", "title":"", "category":"" } ] }
+
+@app.post("/books/{book_id}", status_code=200)
+async def get_book(token: str, book_id: int):
+    return { { "book_id":"", "author":"", "title":"", "category":"", "body":"" } }
+
+@app.put("/books/{book_id}", status_code=200)
+async def update_book(token:str, title:str, body:str, category:str, book_id:int):
+    return { { "book_id":"" } }
 
 @app.post("/auth", status_code=200)
 async def authenticate(auth: Auth):
