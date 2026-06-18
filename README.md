@@ -34,6 +34,8 @@ CREATE TABLE BOOK (
 );
 ```
 
+![alt text](image-1.png)
+
 ## API ENDPOINTS
 POST `/books` + {token:str, title:str, body:str, category:int} ->  
 ```
