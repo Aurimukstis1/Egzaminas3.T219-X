@@ -96,3 +96,6 @@ POST `/auth` + {user:str, password:str} ->
     }
 }
 ```
+
+paleisti serverį galima su:  
+`$ fastapi dev MainProcessing.py`

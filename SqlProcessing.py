@@ -38,5 +38,5 @@ class SqlProcessing():
         return
     
     async def validate_author(self, lastname:str, firstname:str, passhash:str):
-        pass
+        return 0
 
